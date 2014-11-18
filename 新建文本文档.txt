@@ -1,1 +1,2 @@
-this is my wayasdasd 
+auction1是后台应用
+Auction是PhoneGap搭建的Android初始框架
