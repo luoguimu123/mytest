@@ -11,7 +11,7 @@ import javax.persistence.Table;
 import org.apache.commons.lang.builder.ToStringBuilder;
 
 @Entity
-@Table(name = "T_USER")
+@Table(name = "tuser")
 public class TestUser implements Serializable{
 	@Id
 	@Column(name="id")

@@ -17,6 +17,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import com.siims.auction.domain.TestUser;
+import com.siims.auction.service.TestUserService;
 import com.siims.auction.service.TestUserServiceImpl;
 import com.siims.auction.utils.JsonSend;
 
@@ -36,15 +38,16 @@ public class TestController {
 	public void printWelcome(ModelMap model,@RequestParam(value="id",required=true)int sendId,
              HttpServletRequest request,HttpServletResponse response  
 			) throws Exception {
-		List<Object> list = new ArrayList<Object>();
 		
-		for(int i=0;i<10;i++){
-			Map <String,Object>m= new HashMap<String,Object>();
-			m.put("title", "title"+i);
-			m.put("content", "content"+i);
-			JSONObject j = new JSONObject(m);
-			list.add(j);
-		}
+		List<Object> list =  service.getAllUsers();
+				
+//		for(int i=0;i<10;i++){
+//			Map <String,Object>m= new HashMap<String,Object>();
+//			m.put("title", "title"+i);
+//			m.put("content", "content"+i);
+//			JSONObject j = new JSONObject(m);
+//			list.add(j);
+//		}
 		JSONArray array = new JSONArray(list);
 		System.out.println("id--------> "+sendId);
 		JsonSend.send(response, array.toJSONString());
