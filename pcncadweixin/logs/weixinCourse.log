@@ -1,0 +1,7 @@
+[INFO ] 2014-11-21 14:55:22,258 org.liufeng.course.util.MenuUtil ɾ���˵��ɹ�
+[ERROR] 2014-11-21 14:55:22,681 org.liufeng.course.util.MenuUtil �����˵�ʧ�� errcode:40027 errmsg:invalid sub button url size
+[INFO ] 2014-11-21 14:55:22,681 org.liufeng.weixin.main.MenuManager 菜单创建失败！
+[INFO ] 2014-11-21 14:58:16,834 org.liufeng.course.util.MenuUtil ɾ���˵��ɹ�
+[INFO ] 2014-11-21 14:58:17,382 org.liufeng.weixin.main.MenuManager 菜单创建成功！
+[INFO ] 2014-11-21 15:08:01,087 org.liufeng.course.util.MenuUtil 删除菜单成功
+[INFO ] 2014-11-21 15:08:01,681 org.liufeng.weixin.main.MenuManager 菜单创建成功！
