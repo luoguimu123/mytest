@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>发布商品</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" >
+<link rel="stylesheet" href="css/my.css" />
+<link rel="stylesheet" href="css/jquery.mobile.structure-1.4.4.css" />
+<script type="text/javascript" charset="utf-8" src="js/cordova.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/jquery-2.1.1.js" ></script>
+<script type="text/javascript" charset="utf-8" src="js/jquery.mobile-1.4.4.js"></script>
+<script type="text/javascript" src="js/realese.js" ></script>
+</head>
+<body>
+        <div data-role = "page">
+        	<div data-role = "header" data-position = "fixed">
+        		<h3>二手物品</h3>
+        		<a data-role="button" data-icon="back" class="ui-btn-icon-left" data-rel="back">返回</a>
+        		<a href="#" data-ajax = "false" id="store">暂存</a>
+        	</div>
+        	
+        	<div data-role = "content">
+        		<div id="pics">
+        			此处放置用户点击后上传到照片
+        			<img  src="img/u37.png"/>
+        		</div>
+        		<button data-icon="camera" data-iconpos = "left">添加照片</button>
+        		<input type="text" name="name" id="name" placeholder="宝贝名称" />
+        		
+        		<div class="ui-grid-b">        
+					<div class="ui-block-a" style="width: 50%;">
+						<input type="text" id="price" placeholder="转让价"/>
+					</div>
+					<div class="ui-block-b" style="width: 50%;">
+						<select id="type">
+						    <option value="类型">类型</option>
+						    <option value="家电生活">家电生活</option>
+						    <option value="手机通信">手机通信</option>
+						    <option value="数码世界">数码世界</option>
+						    <option value="电脑配件">电脑配件</option>
+						    <option value="其他">其他</option>
+						</select>
+					</div>
+					
+				</div>
+				<textarea id="detaildesc" rows="20">快快描述下你的宝贝吧^_^</textarea>
+        		
+        	</div>
+        	
+        	<div data-role = "footer" data-position = "fixed">
+        		<button id="submit" class="ui-btn ui-corner-all" style="width: 100%;">发布</button>
+        	</div>
+        </div>
+</body>
+</html>
