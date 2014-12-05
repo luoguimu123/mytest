@@ -17,6 +17,7 @@ import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.hibernate.criterion.Criterion;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
@@ -227,6 +228,50 @@ public class BaseDaoImpl<M, PK extends Serializable> implements IBaseDao<M, PK> 
         else
             criteria.addOrder(Order.desc(orderBy));
         return criteria;
-    } 
+    }
+
+	@Override
+	public M findEntityByHql(String hql, Object... values) {
+		// TODO Auto-generated method stub
+		Session session = getSession();
+		Transaction t =null;
+		 Query query = null;
+		try{
+			t= session.beginTransaction();
+			query = session.createQuery(hql);
+		}catch(Exception e){
+			System.out.println("Entity worong  "+e.toString());
+			return null;
+		}
+		try{
+        for (int i = 0; i < values.length; i++) {
+            query.setParameter(i, values[i]);
+        }
+      t.commit();
+      session.flush();
+		}catch(Exception e){
+			return null;
+		}
+		if(query.list()==null){
+			return null;
+		}
+		if(query.list().size()==0){
+			return null;
+		}
+       return (M) query.list().get(0);
+	}
+
+	@Override
+	public List<M> findByHql(String hql, Object... values) {
+		// TODO Auto-generated method stub
+		Session session = getSession();
+		 Query query = session.createQuery(hql);
+         for (int i = 0; i < values.length; i++) {
+             query.setParameter(i, values[i]);
+         }
+       //  query.setMaxResults(count).setFirstResult(start);
+         List<M> list = query.list();
+         return list;
+	} 
     
 }

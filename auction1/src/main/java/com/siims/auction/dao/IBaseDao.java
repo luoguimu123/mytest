@@ -113,4 +113,18 @@ public interface IBaseDao<M, PK extends Serializable>{
      * @return
      */
     public M findUniqueBy(String propertyName, Object value);
+    /**
+     * 根据hql取得实体
+     * @param hql hql语句
+     * @param objects 属性值
+     * @return
+     */
+    public M findEntityByHql(String hql,Object... values );
+    /**
+     * 根据hql取得实体列表
+     * @param hql
+     * @param objects
+     * @return
+     */
+    public List<M>findByHql(String hql,Object... values );
 }
